@@ -71,10 +71,37 @@ for Autonomous Driving Motion Planning</h1>
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!--
-          <p>Interaction-aware autonomous driving requires joint prediction of the motion of other agents and planning of the ego trajectory. A prevailing approach is large-scale imitation learning on expert driving datasets, yielding a unified motion planning policy that generalizes across diverse real-world sce- narios. For online trajectory generation, such methods must operate at real time rates. Existing approaches are either slow at inference, as in diffusion models, or require retraining to tune inference behavior, as in consistency models. To address these limitations, we propose a conditional flow-matching policy for trajectory synthesis that reasons over multi-agent interactions in real time. Alongside the policy network, we train a lightweight variance estimator that adjusts the number of inference steps online, thereby eliminating the need for retraining. To further enhance ride quality, we introduce a trajectory post-processing step cast as a convex quadratic program, with negligible computational overhead. Trained on the Waymo Open Motion Dataset, the framework performs maneuvers such as lane changes, adaptive cruise control, and navigating unprotected left-turns without requiring scenario specific tuning. It does so while maintaining an online replanning rate of 20 Hz on a single NVIDIA RTX 3070 GPU. The proposed approach delivers improved trajectory smoothness and satisfaction of dynamic constraints compared to transformer, diffusion, and consistency model baselines.</p>
-          -->
-          <p>Waiting for approval to make website and code public.</p>
+          
+          <p>
+            Autonomous driving requires reasoning about in-
+teractions with surrounding traffic. A prevailing approach is
+large-scale imitation learning on expert driving datasets, aimed
+at generalizing across diverse real-world scenarios. For online
+trajectory generation, such methods must operate at real-time
+rates. Diffusion models require hundreds of denoising steps
+at inference, resulting in high latency. Consistency models
+mitigate this issue but rely on carefully tuned noise schedules
+to capture the multi modal action distributions common in
+autonomous driving. Adapting the schedule typically requires
+expensive retraining. To address these limitations, we propose
+a framework based on conditional flow matching that jointly
+predicts future motions of surrounding agents and plans the
+ego trajectory in real time. We train a lightweight variance
+estimator that selects the number of inference steps online,
+removing the need for retraining to balance runtime and
+imitation learning performance. To further enhance ride quality,
+we introduce a trajectory post-processing step cast as a convex
+quadratic program, with negligible computational overhead.
+Trained on the Waymo Open Motion Dataset, the framework
+performs maneuvers such as lane changes, cruise control, and
+navigating unprotected left turns without requiring scenario-
+specific tuning. Our method maintains a 20 Hz update rate on
+a NVIDIA RTX 3070 GPU, making it suitable for online de-
+ployment. Compared to transformer, diffusion, and consistency
+model baselines, we achieve improved trajectory smoothness
+and better adherence to dynamic constraints. 
+          </p>
+            <!-- <p>Waiting for approval to make website and code public.</p> -->
         </div>
       </div>
     </div>

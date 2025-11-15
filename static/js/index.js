@@ -176,4 +176,27 @@ $(document).ready(function() {
       }, 2000);
     }
     document.querySelectorAll('#visualizations img.gif-auto').forEach(tryUpgradeToVideo);
+
+    // Ensure visualization videos auto-play like CCMPC site
+    function ensureVideoAutoplay(v) {
+      if (!v) return;
+      try {
+        v.muted = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('playsinline', '');
+        v.setAttribute('webkit-playsinline', '');
+        var playPromise = v.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise.catch(function() {
+            // Retry once on user interaction if autoplay blocks
+            var retry = function() {
+              v.play().catch(function() {});
+              window.removeEventListener('click', retry);
+            };
+            window.addEventListener('click', retry, { once: true });
+          });
+        }
+      } catch (e) {}
+    }
+    document.querySelectorAll('#visualizations video').forEach(ensureVideoAutoplay);
 })

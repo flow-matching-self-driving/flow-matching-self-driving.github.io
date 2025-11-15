@@ -177,3 +177,11 @@ body {
 .section.compact-top {
   padding-top: 0.01rem;
 }
+
+/* Ensure videos scale like images in Bulma's figure */
+.image video {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}

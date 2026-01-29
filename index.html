@@ -54,7 +54,19 @@ for Autonomous Driving Motion Planning</title>
           <h1 class="title is-1 publication-title">Adaptive Time Step Flow Matching
 for Autonomous Driving Motion Planning</h1>
           <div class="is-size-5 publication-authors authors-list">
-            <span class="author-block">Anonymous Authors</span>
+            <span class="author-block">
+              Ananya Trivedi∗<sup>1,2</sup>, Anjian Li<sup>1,3</sup>, Mohamed Elnoor<sup>1,4</sup>, Yusuf Umut Ciftci<sup>1,5</sup>, Avinash Singh<sup>1</sup>,
+              Jovin D’sa<sup>1</sup>, Sangjae Bae<sup>1</sup>, David Isele<sup>1</sup>, Taşkın Padır<sup>2</sup>, Faizan M. Tariq∗<sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">All work was done at HRI.</span><br>
+            <span class="author-block"><sup>1</sup>Honda Research Institute, San Jose, CA 95134, USA</span><br>
+            <span class="author-block"><sup>2</sup>Northeastern University, Boston, MA 02115, USA</span><br>
+            <span class="author-block"><sup>3</sup>Princeton University, Princeton, NJ 08544, USA</span><br>
+            <span class="author-block"><sup>4</sup>University of Maryland, College Park, MD 20742, USA</span><br>
+            <span class="author-block"><sup>5</sup>Stanford University, Stanford, CA 94305, USA</span><br>
+            <span class="author-block">∗Corresponding authors: <a href="mailto:trivedi.ana@northeastern.edu">trivedi.ana@northeastern.edu</a> &amp; <a href="mailto:faizan_tariq@honda-ri.com">faizan_tariq@honda-ri.com</a></span>
           </div>
         </div>
       </div>
@@ -73,7 +85,7 @@ for Autonomous Driving Motion Planning</h1>
         <div class="content has-text-justified">
           
           <p>
-            Autonomous driving requires reasoning about interactions with surrounding traffic. A prevailing approach is large-scale imitation learning on expert driving datasets, aimed at generalizing across diverse real-world scenarios. For online trajectory generation, such methods must operate at real-time rates. Diffusion models require hundreds of denoising steps at inference, resulting in high latency. Consistency models mitigate this issue but rely on carefully tuned noise schedules to capture the multi modal action distributions common in autonomous driving. Adapting the schedule typically requires expensive retraining. To address these limitations, we propose a framework based on conditional flow matching that jointly predicts future motions of surrounding agents and plans the ego trajectory in real time. We train a lightweight variance estimator that selects the number of inference steps online, removing the need for retraining to balance runtime and imitation learning performance. To further enhance ride quality, we introduce a trajectory post-processing step cast as a convex quadratic program, with negligible computational overhead. Trained on the Waymo Open Motion Dataset, the framework performs maneuvers such as lane changes, cruise control, and navigating unprotected left turns without requiring scenario-specific tuning. Our method maintains a 20 Hz update rate on a NVIDIA RTX 3070 GPU, making it suitable for online deployment. Compared to transformer, diffusion, and consistency model baselines, we achieve improved trajectory smoothness and better adherence to dynamic constraints. 
+            Autonomous driving requires reasoning about interactions with surrounding traffic. A prevailing approach is large-scale imitation learning on expert driving datasets, aimed at generalizing across diverse real-world scenarios. For online trajectory generation, such methods must operate at real-time rates. Diffusion models require hundreds of denoising steps at inference, resulting in high latency. Consistency models mitigate this issue but rely on carefully tuned noise schedules to capture the multimodal action distributions common in autonomous driving. Adapting the schedule typically requires expensive retraining. To address these limitations, we propose a framework based on conditional flow matching that jointly predicts future motions of surrounding agents and plans the ego trajectory in real time. We train a lightweight variance estimator that selects the number of inference steps online, removing the need for retraining to balance runtime and imitation learning performance. To further enhance ride quality, we introduce a trajectory post-processing step cast as a convex quadratic program, with negligible computational overhead. Trained on the Waymo Open Motion Dataset, the framework performs maneuvers such as lane changes, cruise control, and navigating unprotected left turns without requiring scenario-specific tuning. Our method maintains a 20 Hz update rate on an NVIDIA RTX 3070 GPU, making it suitable for online deployment. Compared to transformer, diffusion, and consistency model baselines, we achieve improved trajectory smoothness and better adherence to dynamic constraints.
           </p>
             <!-- <p>Waiting for approval to make website and code public.</p> -->
         </div>
@@ -91,7 +103,7 @@ for Autonomous Driving Motion Planning</h1>
         <div class="content has-text-justified">
           
           <p>
-            To comply with the double-anonymous review process, we will release the code upon acceptance of the paper.
+            Code will be released publicly.
           </p>
         </div>
       </div>
@@ -209,13 +221,13 @@ for Autonomous Driving Motion Planning</h1>
         <figure class="image">
           <img src="./images/initial.png" alt="Initial Goal">
         </figure>
-        <p class="has-text-centered">Initial Goal</p>
+        <p class="has-text-centered">(a) The ego takes a sharp right exit.</p>
       </div>
       <div class="column is-half">
         <figure class="image">
           <img src="./images/updated.png" alt="Updated Goal">
         </figure>
-        <p class="has-text-centered">Updated Goal</p>
+        <p class="has-text-centered">(b) From the same initial pose, the goal is changed to a left lane change. The policy adapts and produces smooth, lane-aligned trajectories.</p>
       </div>
     </div>
   </div>

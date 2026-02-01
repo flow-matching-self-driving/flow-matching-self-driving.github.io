@@ -119,7 +119,7 @@ for Autonomous Driving Motion Planning</h1>
       </div>
     </div>
 
-    <!-- Row 1: Lane Changes -->
+    <!-- Lane Changes -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h3 class="title is-4">Lane Changes</h3>
@@ -128,31 +128,25 @@ for Autonomous Driving Motion Planning</h1>
     <div class="columns is-multiline">
       <div class="column is-one-third">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Ego Single Lane Change">
-            <source src="./images/ego_single_lane_change.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/ego_lane_change_use.gif" alt="Ego lane change" loading="lazy">
         </figure>
-        <p class="has-text-centered">Ego Single Lane Change</p>
+        <p class="has-text-centered"><strong>Ego Lane Change</strong><br><span class="is-size-7">Ego initiates and completes a lane change with a smooth, lane-aligned trajectory.</span></p>
       </div>
       <div class="column is-one-third">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Ego Dual Lane Change">
-            <source src="./images/ego_dual_lane_change.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/dual_lane_change_keep_paper.gif" alt="Dual lane change" loading="lazy">
         </figure>
-        <p class="has-text-centered">Ego Dual Lane Change</p>
+        <p class="has-text-centered"><strong>Dual Lane Change</strong><br><span class="is-size-7">Ego performs a two-lane shift while maintaining comfort and dynamic feasibility.</span></p>
       </div>
       <div class="column is-one-third">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Traffic Lane Change">
-            <source src="./images/traffic_lane_change.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/others_lane_change_keep_video.gif" alt="Other agents lane change" loading="lazy">
         </figure>
-        <p class="has-text-centered">Traffic Lane Change</p>
+        <p class="has-text-centered"><strong>Other Agents Lane Change</strong><br><span class="is-size-7">Surrounding vehicles change lanes; the policy adapts and preserves safe spacing.</span></p>
       </div>
     </div>
 
-    <!-- Row 2: Courtesy Maneuvers -->
+    <!-- Courtesy Maneuvers -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h3 class="title is-4">Courtesy Maneuvers</h3>
@@ -161,31 +155,25 @@ for Autonomous Driving Motion Planning</h1>
     <div class="columns is-multiline">
       <div class="column is-one-third">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Intersection Behavior">
-            <source src="./images/intersection_behavior.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/courtesy.gif" alt="Courtesy maneuver" loading="lazy">
         </figure>
-        <p class="has-text-centered">Intersection Behavior</p>
+        <p class="has-text-centered"><strong>Courtesy</strong><br><span class="is-size-7">Ego yields appropriately to enable safe and cooperative interactions.</span></p>
       </div>
       <div class="column is-one-third">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Wait Before Turn">
-            <source src="./images/wait_before_turn.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/more_courtesy.gif" alt="More courtesy maneuver" loading="lazy">
         </figure>
-        <p class="has-text-centered">Wait Before Turn</p>
+        <p class="has-text-centered"><strong>More Courtesy</strong><br><span class="is-size-7">A more conservative yielding strategy to reduce conflict with surrounding traffic.</span></p>
       </div>
       <div class="column is-one-third">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Unprotected Left Turn">
-            <source src="./images/unprotected_left_turn.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/longer_Wait_time_courtesy.gif" alt="Longer wait time courtesy maneuver" loading="lazy">
         </figure>
-        <p class="has-text-centered">Unprotected Left Turn</p>
+        <p class="has-text-centered"><strong>Longer Wait Time (Courtesy)</strong><br><span class="is-size-7">Ego waits longer before proceeding to remain courteous and avoid disrupting others.</span></p>
       </div>
     </div>
 
-    <!-- Row 3: Adaptive Cruise Control -->
+    <!-- Adaptive Cruise Control -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h3 class="title is-4">Adaptive Cruise Control</h3>
@@ -194,23 +182,34 @@ for Autonomous Driving Motion Planning</h1>
     <div class="columns is-multiline is-centered">
       <div class="column is-half">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Approaching Stopped Traffic">
-            <source src="./images/approaching_stopped_traffic.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/adaptive_cruise_control_keep_paper.gif" alt="Adaptive cruise control" loading="lazy">
         </figure>
-        <p class="has-text-centered">Approaching Stopped Traffic</p>
+        <p class="has-text-centered"><strong>Adaptive Cruise Control</strong><br><span class="is-size-7">Maintains a safe headway while producing smooth speed and acceleration profiles.</span></p>
       </div>
       <div class="column is-half">
         <figure class="image">
-          <video controls playsinline preload="metadata" aria-label="Stop and Go">
-            <source src="./images/stop_and_go.mp4" type="video/mp4">
-          </video>
+          <img src="./Results/acc_ctsy.gif" alt="Adaptive cruise control with courtesy" loading="lazy">
         </figure>
-        <p class="has-text-centered">Stop and Go</p>
+        <p class="has-text-centered"><strong>ACC Courtesy</strong><br><span class="is-size-7">Adaptive cruise control with added courtesy, yielding when beneficial for traffic flow.</span></p>
       </div>
     </div>
 
-    <!-- Row 4: Goal Change -->
+    <!-- Unprotected Left Turn -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Unprotected Left Turn</h3>
+      </div>
+    </div>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="./Results/unprotected_left_turn.gif" alt="Unprotected left turn" loading="lazy">
+        </figure>
+        <p class="has-text-centered"><strong>Unprotected Left Turn</strong><br><span class="is-size-7">Navigates an unprotected left turn while interacting safely with oncoming traffic.</span></p>
+      </div>
+    </div>
+
+    <!-- Goal Change -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h3 class="title is-4">Goal Change</h3>
@@ -219,13 +218,13 @@ for Autonomous Driving Motion Planning</h1>
     <div class="columns is-multiline is-centered">
       <div class="column is-half">
         <figure class="image">
-          <img src="./images/initial.png" alt="Initial Goal">
+          <img src="./Results/initial_goal.png" alt="Goal change (a): sharp right exit" loading="lazy">
         </figure>
         <p class="has-text-centered">(a) The ego takes a sharp right exit.</p>
       </div>
       <div class="column is-half">
         <figure class="image">
-          <img src="./images/updated.png" alt="Updated Goal">
+          <img src="./Results/updated_goal.png" alt="Goal change (b): left lane change" loading="lazy">
         </figure>
         <p class="has-text-centered">(b) From the same initial pose, the goal is changed to a left lane change. The policy adapts and produces smooth, lane-aligned trajectories.</p>
       </div>
